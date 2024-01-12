@@ -1,0 +1,36 @@
+# Open and format the input a little bit
+nums = open('arith.txt').read().split('\n')
+
+# Store the working input here
+rows = []
+
+# Fill a new list with sublists, finish creating the working variable
+for i in nums:
+    rows.append(i.split(' '))
+
+# Feed this a list of 3 part lists
+def progression(n):
+    # Build list in this variable
+    ans = []
+    for i in n:
+        # One part for each variable
+        a = int(i[0])
+        d = int(i[1])
+        n = int(i[2])
+        s_n = a * d + n
+        # Fill the returning list while the loop runs
+        ans.append(getSum(s_n))
+    # Return when the loop completes
+    return ans
+    
+
+def getSum(n): 
+    sum = 0
+    for digit in str(n):  
+      sum += int(digit)       
+    return sum
+    
+
+
+for i in progression(rows):
+    print(i)
