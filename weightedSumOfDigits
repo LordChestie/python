@@ -1,0 +1,24 @@
+# Open and format the input a little bit
+nums = open('weighted.txt').read().split(' ')
+
+# Feed this a list of numbers
+def progression(n):
+    # Build list in this variable
+    ans = []
+    for i in n:
+        ans.append(int(getSum(i)))
+    # Return when the loop completes
+    return ans
+    
+
+# Iterate over each number and multiply the number by the position + 1
+def getSum(n): 
+    sum = 0
+    for count, digit in enumerate(n):
+        sum += (int(digit) * (int(count) + 1))
+    return sum
+    
+
+
+for i in progression(nums):
+    print(i)
