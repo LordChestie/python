@@ -18,6 +18,7 @@ def war():
         print(f"{player[0]} {player[1]} | {computer[0]} {computer[1]}")
         if card_values[player[0]] > card_values[computer[0]]:
             print("You win the war...")
+            # Add logic to display the cards played in the turn plus six additional randos
             print('''
             Here are your winnings...
             {
@@ -25,7 +26,9 @@ def war():
             return
         elif card_values[player[0]] < card_values[computer[0]]:
             print("You lost the war..")
+            # Add logic to display the cards player played in the turn plus three additional randos
             print('''
+            
             Here are your losses...
             {
             ''')
